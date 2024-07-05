@@ -5,10 +5,13 @@ pipeline {
         }    
     }
 
+environment {
+    PATH = "/opt/apache-maven-3.9.8/bin:${PATH}"
+}
     stages {
-        stage('Clone Code from git') {
+        stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/jomaa-ahmed/devopsCICD.git'
+                sh 'mvn clean deploy'
             }
         }
     }
