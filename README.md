@@ -204,4 +204,4 @@ This guide covers the setup of a Terraform environment on Windows, including the
 ### 6. terraform workning
 ![terraform working](./AWSterraform/16-terraform%20working.png)
 ---
-+++
+
