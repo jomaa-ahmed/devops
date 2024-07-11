@@ -131,7 +131,7 @@ This guide covers the setup of a Terraform environment on Windows, including the
     }
   }
   ```
-
+-
 ### 3. Internet Gateway
 - **Definition:** Allows communication between instances in your VPC and the internet.
 - **Purpose:** Enables internet access for instances within the VPC.
