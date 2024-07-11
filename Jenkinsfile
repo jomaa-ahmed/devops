@@ -1,17 +1,19 @@
 pipeline {
     agent {
         node {
-            label 'maven'
-        }    
+            label 'maven-slave'
+            jdk 'JDK 17'
+        }
     }
-
-environment {
-    PATH = "/opt/apache-maven-3.9.8/bin:${PATH}"
-}
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean deploy'
+                script {
+                    env.JAVA_HOME = "${tool 'JDK 17'}"
+                    env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+                }
+                sh 'java -version'
+                sh 'mvn clean deploy -X'
             }
         }
     }
